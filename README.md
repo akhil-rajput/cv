@@ -56,3 +56,36 @@ public class Main
 	
 	}
 }
+******************************************///////Cut m and n letters from the end of the string, then find the number of turns to get back the original string//////////////////////////////////////
+
+
+public class Main
+{
+	public static void main(String[] args) {
+	    String s="arya";
+	    int count=0;
+	    boolean flag=true;
+	    int m=1;
+	    int n=2;
+	    StringBuilder str=new StringBuilder("");
+	    str.append(s);
+	    while(flag){
+	       String str1=str.substring(str.length()-m, str.length());
+	       String str2=str.substring(str.length()-(m+n), str.length()-m);
+	       String str3=str.substring(0, str.length()-(m+n));
+	       str.delete(0,str.length());
+	         str.append(str2);
+	       str.append(str1);
+	     
+	       str.append(str3);
+	       System.out.println(str);
+	       count++;
+	       if(str.toString().equals(s)){
+	           
+	          flag=false; 
+	       }
+	    }
+		System.out.println(count);
+	}
+}
+
